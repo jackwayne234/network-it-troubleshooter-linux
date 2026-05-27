@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Network IT Troubleshooter
+Comment=Open Network IT Troubleshooter without using the terminal
+Exec=/absolute/path/to/network-it-troubleshooter-linux/Open Network IT Troubleshooter
+Path=/absolute/path/to/network-it-troubleshooter-linux
+Terminal=false
+Icon=network-wired
+Categories=Utility;
+StartupNotify=true
