@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "app": "Network Diagnostics Report Tool",
+  "diagnostic_run": {
+    "report_kind": "network_diagnostics",
+    "platform": "linux",
+    "source": "sample_report"
+  },
+  "overall": {
+    "status": "healthy",
+    "summary": "All 6 checks passed. No obvious network problem was detected.",
+    "likely_problem_area": null,
+    "next_step": "If you are still having trouble, test the specific website or service that is failing."
+  },
+  "results": [
+    {"name": "Interfaces", "status": "pass", "summary": "At least one IPv4 address found.", "details": {}},
+    {"name": "Routes", "status": "pass", "summary": "Default gateway found.", "details": {}},
+    {"name": "Ping 192.168.1.1", "status": "pass", "summary": "Gateway reachable.", "details": {}},
+    {"name": "Ping 1.1.1.1", "status": "pass", "summary": "Internet IP reachable.", "details": {}},
+    {"name": "DNS lookup example.com", "status": "pass", "summary": "DNS resolved.", "details": {}},
+    {"name": "HTTP status https://example.com", "status": "pass", "summary": "Website responded.", "details": {}}
+  ]
+}
