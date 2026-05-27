@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "app": "Network Diagnostics Report Tool",
+  "diagnostic_run": {
+    "report_kind": "network_diagnostics",
+    "platform": "linux",
+    "source": "sample_report"
+  },
+  "overall": {
+    "status": "problem_detected",
+    "summary": "The router/local gateway appears reachable, but public internet ping failed.",
+    "likely_problem_area": "internet_or_isp",
+    "next_step": "Check ISP/router WAN status or test from another device."
+  },
+  "results": [
+    {"name": "Interfaces", "status": "pass", "summary": "At least one IPv4 address found.", "details": {}},
+    {"name": "Routes", "status": "pass", "summary": "Default gateway found.", "details": {}},
+    {"name": "Ping 192.168.1.1", "status": "pass", "summary": "Gateway reachable.", "details": {}},
+    {"name": "Ping 1.1.1.1", "status": "fail", "summary": "Internet IP unreachable.", "details": {}},
+    {"name": "DNS lookup example.com", "status": "fail", "summary": "DNS lookup failed due to no upstream internet.", "details": {}},
+    {"name": "HTTP status https://example.com", "status": "fail", "summary": "Website did not respond.", "details": {}}
+  ]
+}
