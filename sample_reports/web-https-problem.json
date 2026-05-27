@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "app": "Network Diagnostics Report Tool",
+  "diagnostic_run": {
+    "report_kind": "network_diagnostics",
+    "platform": "linux",
+    "source": "sample_report"
+  },
+  "overall": {
+    "status": "problem_detected",
+    "summary": "DNS appears to work, but HTTPS/web access failed.",
+    "likely_problem_area": "web_tls_proxy_or_site",
+    "next_step": "Check the target site, proxy/firewall settings, captive portal, or TLS path."
+  },
+  "results": [
+    {"name": "Interfaces", "status": "pass", "summary": "At least one IPv4 address found.", "details": {}},
+    {"name": "Routes", "status": "pass", "summary": "Default gateway found.", "details": {}},
+    {"name": "Ping 192.168.1.1", "status": "pass", "summary": "Gateway reachable.", "details": {}},
+    {"name": "Ping 1.1.1.1", "status": "pass", "summary": "Internet IP reachable.", "details": {}},
+    {"name": "DNS lookup example.com", "status": "pass", "summary": "DNS resolved.", "details": {}},
+    {"name": "HTTP status https://example.com", "status": "fail", "summary": "HTTPS/web check failed.", "details": {}}
+  ]
+}
