@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -u
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_FILE="$APP_DIR/network-it-troubleshooter-launch.log"
+cd "$APP_DIR" || exit 1
+
+if [ "${1:-}" = "--self-test" ]; then
+  ./run.sh --self-test >"$LOG_FILE" 2>&1
+  status=$?
+  cat "$LOG_FILE"
+  exit "$status"
+fi
+
+# No-terminal launch path: write diagnostics to a quiet project-local log.
+# The app itself remains GUI-only for the user.
+nohup ./run.sh >"$LOG_FILE" 2>&1 &
+exit 0
